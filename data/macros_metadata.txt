@@ -1,0 +1,256 @@
+This “macros_metadata” file was most recently updated on 2025-10-20 by Marney Pratt
+
+
+-------------------
+GENERAL INFORMATION
+-------------------
+
+
+1. Title of Dataset 
+
+Mill River Macroinvertebrate Data for 2019-2024
+
+
+2. Author Information
+
+
+  Principal Investigator Contact Information
+        Name: Marney Pratt
+           Institution: Smith College
+           Address: 44 College Ln, Northampton, MA 01063
+           Email: mcpratt@smith.edu
+
+
+
+3. Date of data collection (single date, range, approximate date) 
+<dates in format YYYY-MM>
+
+2019-05 to 2024-09
+
+
+4. Geographic location of data collection (where was data collected?): 
+
+Mill River in Northampton, MA  USA
+GPS coordinates given below
+
+
+
+5. Information about funding sources that supported the collection of the data:
+
+Smith College Facilities Management funded summary salary for Marney Pratt and 
+various Summer Undergradate Research Fellowships awarded to students
+
+The Horner Fund also funded Summer Undergradate Research Fellowships to several 
+students 
+
+The Smith College Department of Biological Sciences funded some of the materials 
+and supplies in addition to Smith College Facilities Management
+
+--------------------------
+SHARING/ACCESS INFORMATION
+-------------------------- 
+
+
+1. Licenses/restrictions placed on the data:
+No restrictions other than proper citation/attribution
+
+
+2. Recommended citation for this metadata text file:
+
+Pratt, MC.  2024.  Mill River macroinvertebrate data metadata for 2019-2024.  
+Smith College, Northampton, MA.
+
+3. Recommended citation for the data:
+
+Pratt, MC.  2024.  Mill River macroinvertebrate data for 2019-2024.  
+Smith College, Northampton, MA.
+
+
+
+---------------------
+DATA & FILE OVERVIEW
+---------------------
+
+
+1. File List
+   A. Filename: macro.csv       
+      Short description:        
+
+Each row shows the data from one type of organism found from a site on the same 
+day.  The data contains all the aquatic invertebrates found for the 2018-2024 
+sampling for the upstream and downstream riffles in the Mill River.  
+
+
+
+--------------------------
+METHODOLOGICAL INFORMATION
+--------------------------
+
+
+1. Description of methods used for collection/generation of data: 
+
+Methods: Investigators sampled 5 microhabitats in each site on each date.  
+
+One or Two 50 cm x 50 cm quadrats were sampled within each microhabitat.
+
+Aquatic macroinvertebrates were sampled from riffle habitats (areas with a rocky 
+bottom, shallow depth, rippled water surface, and relatively fast water flow) by 
+kick-sampling using D-nets (LaMotte D-net, 0.3m base opening & 500 micron mesh) 
+in 2018-2022 or kick-nets (Wildco Large Tapered Kick Net - Mesh: 500 um Nitex; 
+Handle: 2-piece, 1524 mm (60”); 32 mm (1-1/4”) dia.; 
+Frame: 335 x 508 mm (13 x 20”); Shroud: Bottom only; Cod End: Open, 3-1/2")
+Nets were placed downstream of the area sampled with the opening facing upstream.  
+A quadrat was placed in front of the net, the area sampled was 
+0.25 meters squared (quadrat size 0.5 m x 0.5m).  
+
+
+Larger rocks were picked up and any organisms found on the rocks were picked off 
+and placed in a tub of river water.
+Once all larger rocks were cleaned off and placed outside of the quadrat, the 
+substratum was disturbed by shuffling and kicking an investigator's boots on the 
+bottom of the river for 30 seconds to 1 minute making sure that the net caught 
+anything disturbed by the kicking. 
+The contents of the net were rinsed into the tub of water.  
+This process was repeated 5-11 times within a location (location = Upstream or 
+Downstream) on the same date, and all samples from a location were either joined 
+into one composite sample (Fall 2018) or kept separate by microhabitat (2019 on).  
+
+
+In each location (upstream and downstream of Paradise Pond) we sampled in
+five microhabitats.  We usually sampled 1-2 quadrats in each microhabitat in a 
+location on a particular day.  
+
+After collecting in the field, samples were taken back to the lab and live 
+sorted into categories (mostly at the order or family level) first or if there 
+wasn't time for live sorting then the whole sample was preserved in 
+70% ethyl alcohol.  Later, each organism was identified to the lowest level 
+possible (down to genus for most things, species for some, and higher taxonomic 
+levels for some difficult to identify organisms such as worms and midges.
+
+Note that because of heavy rains in Fall 2018, sampling was very difficult.  
+The 3rd downstream sample did not sample the sponge microhabitat (DSP) so there 
+were only 4 microhbatitats sampled for that day. The total area sampled on each
+day was also variable. An upstream sample date was also cancelled in Fall 2021 
+because of heavy rains and dangerous conditions.
+
+
+
+2. Describe any quality-assurance procedures performed on the data:
+Whenever possible, identifications were checked by Marney Pratt to ensure 
+consistency.  Data files were checked by Marney Pratt for errors in entry.
+
+3. People involved with sample collection, processing, analysis and/or submission:
+
+Investigators included:
+Marney Pratt
+Denise Lello
+Julie Dubriel
+Smith College students and various volunteers
+
+
+-----------------------------------------
+DATA-SPECIFIC INFORMATION FOR: macros.csv
+-----------------------------------------
+
+
+1. Variable List
+
+date: sampling date in yyyy-mm-dd format 
+	dates are all given in year-month-day (yyyy-mm-dd) format in the .csv file 
+	(note Excel will sometimes switch it to mm/dd/yyyy)
+
+year: sampling year
+
+season: sampling season (Summer or Fall)
+  Summer in this case is usually the first two weeks of June (which means this 
+  is very early summer)
+  Fall is when the labs were able to be scheduled in various Bio 131 lab sections. 
+  This was usually in the last two weeks of September, but often stretched into 
+  early October as well.
+
+location: location in the river - Upstream or Downstream of Paradise Pond
+	Coordinates estimated with Google Earth.
+	https://docs.google.com/presentation/d/112FTHi84gQDcd_78vneF7nzcgPe0D2qoUNOyF4ZxU1M/edit?usp=sharing
+
+	Upstream = This site is located in the Mill River upstream of the Paradise 
+	Pond impoundment.  The trail used to get to the river is 	Just off of 
+	Federal St in Northampton, MA.  The coordinates for the center of the area of 
+	the river sampled that is: 
+		UR "downstream of the bend" 42degrees19'09"N  72degrees39'17"W  226m in elevation 
+		UR "upstream of the bend"   42degrees19'17"N  72degrees39'12"W  226m in elevation
+		Note that the "bend"" is the bend in the river where there is a high 
+		retaining wall on one side and the water runs fast and deep
+
+	Downstream = This site is located just downstream of the Paradise Pond Dam and 
+	Lamont Bridge in the Mill River.  
+	The center of the area of the river sampled in is around:  
+	42degrees18'53"N  72degrees38'27"W  150m in elevation
+	
+	Both sites were fast flowing, relatively shallow, riffles with mostly rocky 
+	substrate mixed with more or less sand
+	The upstream site is fairly sandy "downstream of the bend" but we tried to 
+	sample in the rockier areas
+
+sampleID: unique identification code for each sample.
+	example: 01URSU18.UM - first two numbers are the sample number, 
+	the next two letters are for the site (UR = upstream riffle, DR = downstream riffle), 
+	the next two letters are for the season (SU = summer, FA = Fall), 
+	and the last two numbers are for the year (18 = 2018, 19 = 2019).  
+	The letters after the period indicate the microhabitat or NA if the 
+	microhabitat is unknown
+
+	
+	See the map of each habitat for locations including the microhabitats within 
+	the sampling area where samples were taken. 		
+	https://docs.google.com/presentation/d/112FTHi84gQDcd_78vneF7nzcgPe0D2qoUNOyF4ZxU1M/edit?usp=sharing
+
+microhabitat: there were 5 microhabitats sampled within each location 
+  (upstream or downstream) as follows
+	
+	DSR - Downstream slow rocky (on the far side of the river (closer to the 
+	athletic fields), just downstream of some larger rocks where the flow is 
+	slower and there are some large rocks)
+	DSP - Downstream sponge area (in the middle of the river, shallow, fast flow, 
+	lots of sponges present)
+	DFR - Downstream fast rocky (on the far side of the river (closer to the 
+	athletic fields), just upstream of some larger rocks where the flow is faster 
+	and there are some large rocks)
+	DM - Downstream middle (in the middle of the river, moderate flow, just 
+	downstream of the sponge area, lots of small and medium sized rocks)
+	DSH - Downstream shady (on the far side of the river (closer to the 
+	athletic fields), in a very fast flow area and very shaded because right below a 
+	tree, further upstream than DFR)
+
+	USR - Upstream slow rocky (on the close side of the river (closer to the path 
+	and the side with the retaining wall, "downstream of the bend"), 
+	just downstream of some larger rocks where the flow is slower and there are 
+	some large rocks)
+	UFR - Upstream fast rocky (on the close side of the river (closer to the path 
+	and the side with the retaining wall, "downstream of the bend"), just upstream 
+	of some larger rocks where the flow is faster and there are some large rocks)
+	UM - Upstream middle (in the middle of the river near some larger rocks, 
+	moderate flow, "downstream of the bend", lots of smallsized rocks)
+	USH - Upstream shady (on the far side of the river ("upstream of the bend", 
+	further from the path we come in on), in a fast flow area and shaded 
+	because right below a tree)
+	USU - Upstream sunny (on the far side of the river ("upstream of the bend", 
+	further from the path we come in on), in a realtively fast flow area 
+	just downstream of USH that is sunnier
+
+ScientificName: the scientific name the organism was identified to 
+  (this is also used to match to the full taxonomic information in the 
+  "master.taxa.csv" file)
+
+stage: life stage of the organism (larva, pupa, or adult)
+
+number: number of organisms of that type for that sample on that day
+
+benthicArea: benthic area in meters squared. Calculated as the area of a 
+  0.25 meter squared quadrat times the number of quadrats.
+
+invDens: invertebrate density in number per meter squared. 
+  Calculated as the number of a particular organism divided by the 
+  benthic area that the organism was sampled in.
+  
+
+see the "master.taxa_metadata.txt" file for the additional variables on taxonomy, tolerance, and FFG

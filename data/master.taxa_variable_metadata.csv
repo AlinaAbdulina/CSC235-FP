@@ -1,0 +1,18 @@
+variable,variable_label,variable_type,variable_info
+acceptedTaxonID,Taxonomic ID Code,character,unique identification code for each taxon based on codes from NEON: https://data.neonscience.org/data-api/endpoints/taxonomy/
+taxonRank,Taxonomic Rank,character,lowest level for the taxonomic level within a row
+scientificName,Scientific Name,character,"the scientific name the organism was identified to  (this is also used to match to the full taxonomic information in the  ""master.taxa.csv"" file)"
+taxon_group,Taxonomic Group,character,taxonomic groups used for analysis
+phylum,Phylum,character,Scientific taxonomic name (if present) for the organism
+subphylum,Subphylum,character,Scientific taxonomic name (if present) for the organism
+class,Class,character,Scientific taxonomic name (if present) for the organism
+order,Order,character,Scientific taxonomic name (if present) for the organism
+family,Family,character,Scientific taxonomic name (if present) for the organism
+subfamily,Subfamily,character,Scientific taxonomic name (if present) for the organism
+tribe,Tribe,character,Scientific taxonomic name (if present) for the organism
+genus,Genus,character,Scientific taxonomic name (if present) for the organism
+species,Species,character,Scientific taxonomic name (if present) for the organism
+taxa.notes,Notes,character,notes about the taxonomy
+tolerance,Tolerance Level,numeric,tolerance to organic pollution for the taxonomic group
+FFG,Functional Feeding Group,character,"Primary functional feeding group of that organism (cf - filtering collector, cg - gathering collector, om - omnivore, prc - piercer,  prd - predator, scr - scraper, sh - shredders)"
+FFG2,Functional Feeding Group 2,character,"additional functional feeding groups an organism belongs to (cf - filtering collector, cg - gathering collector, om - omnivore, prc - piercer,  prd - predator, scr - scraper, sh - shredders)"

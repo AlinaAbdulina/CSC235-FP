@@ -1,0 +1,98 @@
+This “master.taxa_metadata” file was most recently updated on 2025-10-20 by Marney Pratt
+
+
+-------------------
+GENERAL INFORMATION
+-------------------
+
+
+1. Title of Dataset 
+
+Mill River Master Taxa Information
+
+
+2. Author Information
+
+
+  Principal Investigator Contact Information
+        Name: Marney Pratt
+           Institution: Smith College
+           Address: 44 College Ln, Northampton, MA 01063
+           Email: mcpratt@smith.edu
+
+
+--------------------------
+SHARING/ACCESS INFORMATION
+-------------------------- 
+
+
+1. Licenses/restrictions placed on the data:
+No restrictions other than proper citation/attribution
+
+
+2. Recommended citation for this metadata text file:
+
+Pratt, MC.  2025.  Mill River macroinvertebrate master taxonomic metadata.  Smith College, Northampton, MA.
+
+3. Recommended citation for the data:
+
+Pratt, MC.  2025.  Mill River macroinvertebrate master taxonomic.  Smith College, Northampton, MA.
+
+
+
+---------------------
+DATA & FILE OVERVIEW
+---------------------
+
+
+1. File List
+   A. Filename: master.taxa.csv       
+      Short description:        
+
+Each row gives the taxonomic, functional feeding group, and tolerance level information for the different macroinvertebrates found in the Mill River. 
+
+
+-----------------------------------------
+DATA-SPECIFIC INFORMATION FOR: master.taxa.csv
+-----------------------------------------
+
+
+1. Variable List
+
+acceptedTaxonID: this is a unique identification code for each taxon based on codes from NEON: 
+	https://data.neonscience.org/data-api/endpoints/taxonomy/
+	
+taxonRank: this is the lowest level for the taxonomic level within a row
+
+scientificName: this is the scientific name that an organism was identified to (used to match this full taxonomic dataset to the macro dataset)
+
+taxon_group: taxonomic groups used for analysis.	
+	Most are aggregated to the family level, but some are aggregated at higher levels (segmented worms, water mites, etc) 
+	the flatheaded mayfly family is subdivided by functional feeding group
+
+phylum - species: these columns are the taxonomic names (if present) for the organism in that row
+
+taxa.notes: notes about the taxonomy
+
+
+tolerance: tolerance for the organism of that type
+	The tolerance is the tolerance to organic pollution used to calculate the Hilsenhof Biotic Index.  Most tolerance values used were taken from the following resources
+	
+	Stream Biomonitoring Unit Staff.  2012. Standard operating Procedure: Biological monitoring of surface waters in New York State.  
+	New York State Department of Environmental Conservation Division of Water.  Albany, NY.
+	
+	Aquatic Bioassessment Laboratory. 2003. List of California macroinvertebrate taxa and standard taxonomic effort. 
+	California Department of Fish and Game. Rancho Cordova, CA.
+	https://www.safit.org/Docs/CABW_std_taxonomic_effort.pdf
+
+FFG: Primary functional feeding group of that organism
+
+	cf - filtering collector 	dominant food: filter feeders or suspension feeders that eat decomposing fine particular matter (FPOM) 
+	cg - gathering collector 	dominant food: gathers or deposit feeds on decomposing fine particular matter (FPOM) (includes surface film feeders)
+	om - omnivore dominant food: eats a variety of things including plant, animal, and detritus	
+	prc - piercer  dominant food: eats by piercing its prey.  
+	prd - predator	dominant food: eats living animal tissue.  Often ingests whole or part of another animal
+	scr - scraper	 dominant food: scrapes periphyton of surfaces (periphyton = algae and associated material attached to rocks and other substrata)
+	sh - shredders 	dominant food: herbivore variety chew and mines live plant material, detritivore variety chews, bores, or gouges decomposing vascular plant 	tissue including wood (course particulate organic matter = CPOM)
+	
+FFG2: additional functional feeding groups an organism belongs to

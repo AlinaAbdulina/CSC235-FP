@@ -1,0 +1,20 @@
+variable,variable_label,variable_type,variable_info
+date,Date,date,sampling date in yyyy-mm-dd format
+year,Year,discrete or categorical,year in which the sampling took place
+season,Season,categorical,season in which the sampling took place - Summer or Fall
+location,Location,categorical,"location in the river - Upstream or Downstream of Paradise Pond in the Mill River, Northampton, MA"
+sampleID,Sample ID code,character,unique identification for each sampling day for each microhabitat
+startTime,Start Time,time,the time a measurement was taken using a 24-hour clock in the Eastern Daylight Timezone
+dateTime.UTC,Date Time in UTC,date time,the date and time together with the time converted from EDT to UTC
+microhabitat,Microhabitat,character,microhabitat within the sampling area where samples were taken
+quadrat,Quadrat,character,sample number within a microhabitat on a particular day.  1-3 samples were made in each microhabitat per day
+depth,Water Depth (cm),continuous,depth of the water in centimeters
+pH,pH,continuous,the pH (no units)
+wTemp,Water Temperature (*C),continuous,Water temperature measured in Celcius
+DO,Dissolved Oxygen (mg/L),continuous,Dissolved oxygen measured in milligrams of oxygen per liter
+light,Photosyntehtically active radiation (PPFD),continuous,Photosyntehtically active radiation was measured in photosynthetic photon flux density (PPFD) which corresponds to the micromoles of photons per meter squared per second
+flow,Flow Rate (m/s),continuous,Flow rate of the water in meters per second
+turb,Turbidity (NTU),continuous,Turbidity measured in Nephelometric Turbidity Units (NTU)
+cond,Conductivity (microS/cm),continuous,Conductivity measured in microsiemens per centimeter (µS/cm)
+nitrate,Nitrate Concentration (mg/L),continuous,the concentration of Nitrate (NO3–) in milligrams per liter (mg/L) (=ppm) in the water
+alkalinity,Alkalinity (ppm of CaCO3),continuous,the total alkalinity of a water sample in parts per million of calcium carbonate (ppm of CaCO3)

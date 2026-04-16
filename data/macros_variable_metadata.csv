@@ -1,0 +1,12 @@
+variable,variable_label,variable_type,variable_info
+date,Date,date,sampling date in yyyy-mm-dd format
+year,Year,discrete or categorical,year in which the sampling took place
+season,Season,categorical,season in which the sampling took place - Summer or Fall
+location,Location,categorical,"location in the river - Upstream or Downstream of Paradise Pond in the Mill River, Northampton, MA"
+sampleID,Sample ID code,character,unique identification for each sampling day for each microhabitat
+microhabitat,Microhabitat,character,microhabitat within the sampling area where samples were taken
+scientificName,Scientific Name,character,"the scientific name the organism was identified to  (this is also used to match to the full taxonomic information in the  ""master.taxa.csv"" file)"
+stage,Life History Stage,character,"life stage of the organism (larva, pupa, or adult)"
+number,Number,discrete,The number of a specific type of macroinvertebrate collected in that sample
+benthicArea,Benthic Area (m2),continuous,The total area sampled in meters squared
+invDens,Invertebrate Density (#/m^2),continuous,The number of a specific type of macroinvertebrate divided by the area sampled in meters squared

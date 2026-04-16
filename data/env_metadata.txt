@@ -1,0 +1,564 @@
+This “env_metadata” file was most recently updated on 2025-10-20 by Marney Pratt
+
+
+-------------------
+GENERAL INFORMATION
+-------------------
+
+
+1. Title of Dataset 
+
+Mill River Water Quality and Weather Data for 2019-2024
+
+
+2. Author Information
+
+
+  Principal Investigator Contact Information
+        Name: Marney Pratt
+           Institution: Smith College
+           Address: 44 College Ln, Northampton, MA 01063
+           Email: mcpratt@smith.edu
+
+
+
+3. Date of data collection (single date, range, approximate date) <dates in format YYYY-MM>
+
+2019-05 to 2024-09
+
+
+4. Geographic location of data collection (where was data collected?): 
+
+Mill River in Northampton, MA  USA
+GPS coordinates given below
+
+
+
+5. Information about funding sources that supported the collection of the data:
+
+Smith College Facilities Management funded summary salary for Marney Pratt and 
+various Summer Undergradate Research Fellowships awarded to students
+
+The Horner Fund also funded Summer Undergradate Research Fellowships to several students 
+
+The Smith College Department of Biological Sciences funded some of the materials 
+and supplies in addition to Smith College Facilities Management
+
+--------------------------
+SHARING/ACCESS INFORMATION
+-------------------------- 
+
+
+1. Licenses/restrictions placed on the data:
+No restrictions other than proper citation/attribution
+
+
+2. Recommended citation for this metadata text file:
+
+Pratt, MC.  2024.  Mill River environmental data metadata for 2019-2024.  
+Smith College, Northampton, MA.
+
+3. Recommended citation for the data:
+
+Pratt, MC.  2024.  Mill River environmental data for 2019-2024.  
+Smith College, Northampton, MA.
+
+
+
+---------------------
+DATA & FILE OVERVIEW
+---------------------
+
+
+1. File List
+   A. Filename: env.csv       
+      Short description:        
+
+Each row shows the data from a particular microhabitat sampled on the same day
+
+
+--------------------------
+METHODOLOGICAL INFORMATION
+--------------------------
+
+
+1. Description of methods used for collection/generation of data: 
+
+Methods: Investigators sampled 5 microhabitats in each site on each date.  
+
+One or Two 50 cm x 50 cm quadrats were sampled within each microhabitat.
+
+Aquatic macroinvertebrates were sampled from riffle habitats (areas with a rocky 
+bottom, shallow depth, rippled water surface, and relatively fast water flow) by 
+kick-sampling using D-nets (LaMotte D-net, 0.3m base opening & 500 micron mesh) 
+in 2018-2022 or kick-nets (Wildco Large Tapered Kick Net - Mesh: 500 um Nitex; 
+Handle: 2-piece, 1524 mm (60”); 32 mm (1-1/4”) dia.; 
+Frame: 335 x 508 mm (13 x 20”); Shroud: Bottom only; Cod End: Open, 3-1/2")
+Nets were placed downstream of the area sampled with the opening facing upstream.  
+A quadrat was placed in front of the net, the area sampled was 
+0.25 meters squared (quadrat size 0.5 m x 0.5m).  
+
+
+Larger rocks were picked up and any organisms found on the rocks were picked off 
+and placed in a tub of river water.
+Once all larger rocks were cleaned off and placed outside of the quadrat, the 
+substratum was disturbed by shuffling and kicking an investigator's boots on the 
+bottom of the river for 30 seconds to 1 minute making sure that the net caught 
+anything disturbed by the kicking. 
+The contents of the net were rinsed into the tub of water.  
+This process was repeated 5-20 times within a location (location = Upstream or 
+Downstream) on the same date, and all samples from a location were either joined 
+into one composite sample (Fall 2018) or kept separate by microhabitat (2019 on).  
+
+
+In each location (upstream and downstream of Paradise Pond) we sampled in
+five microhabitats.  We usually sampled 1-2 quadrats in each microhabitat in a 
+location on a particular day.  
+
+Each of the water quality measures were not taken during all sampling days 
+because of time or weather constraints. More information on methods is given 
+below for each variable.
+
+ 
+After collecting in the field, samples were taken back to the lab and live 
+sorted into categories (mostly at the order or family level) first or if there 
+wasn't time for live sorting then the whole sample was preserved in 
+70% ethyl alcohol.  Later, each organism was identified to the lowest level 
+possible (down to genus for most things, species for some, and higher taxonomic 
+levels for some difficult to identify organisms such as worms and midges.
+
+Note that because of heavy rains in Fall 2018, sampling was very difficult.  
+The 3rd downstream sample did not sample the sponge microhabitat (DSP) so there 
+were only 4 microhbatitats sampled for that day. The total area sampled on each
+day was also variable. An upstream sample date was also cancelled in Fall 2021 
+because of heavy rains and dangerous conditions.
+
+
+2. Describe any quality-assurance procedures performed on the data:
+Whenever possible, identifications were checked by Marney Pratt to ensure 
+consistency.  Data files were checked by Marney Pratt for errors in entry.
+
+3. People involved with sample collection, processing, analysis and/or submission:
+
+Investigators included:
+Marney Pratt
+Denise Lello
+Smith College students and other volunteers
+
+
+
+
+-----------------------------------------
+DATA-SPECIFIC INFORMATION FOR: env.csv
+-----------------------------------------
+
+
+1. Variable List
+
+date: sampling date in yyyy-mm-dd format 
+	dates are all given in year-month-day (yyyy-mm-dd) format (but note that 
+	sometimes Excel will change the date to month/day/year (mm/dd/yyyy) format 
+	if you open and save the .csv file with Excel)
+
+year: sampling year
+
+season: sampling season (Summer or Fall)
+
+location: location in the river - Upstream or Downstream of Paradise Pond
+	Coordinates estimated with Google Earth.
+	https://docs.google.com/presentation/d/112FTHi84gQDcd_78vneF7nzcgPe0D2qoUNOyF4ZxU1M/edit?usp=sharing
+
+	Upstream = This site is located in the Mill River upstream of the Paradise 
+	Pond impoundment.  The trail used to get to the river is 	Just off of 
+	Federal St in Northampton, MA.  The coordinates for the center of the area of 
+	the river sampled that is: 
+		UR "downstream of the bend" 42degrees19'09"N  72degrees39'17"W  226m in elevation 
+		UR "upstream of the bend"   42degrees19'17"N  72degrees39'12"W  226m in elevation
+		Note that the "bend"" is the bend in the river where there is a high 
+		retaining wall on one side and the water runs fast and deep
+
+	Downstream = This site is located just downstream of the Paradise Pond Dam and 
+	Lamont Bridge in the Mill River.  
+	The center of the area of the river sampled in is around:  
+	42degrees18'53"N  72degrees38'27"W  150m in elevation
+	
+	Both sites were fast flowing, relatively shallow, riffles with mostly rocky 
+	substrate mixed with more or less sand
+	The upstream site is fairly sandy "downstream of the bend" but we tried to 
+	sample in the rockier areas
+
+sampleID: unique identification code for each sample.
+	example: 01URSU18.UM - first two numbers are the sample number, 
+	the next two letters are for the site (UR = upstream riffle, DR = downstream riffle), 
+	the next two letters are for the season (SU = summer, FA = Fall), 
+	and the last two numbers are for the year (18 = 2018, 19 = 2019).  
+	The letters after the period indicate the microhabitat or NA if the 
+	microhabitat is unknown
+
+	
+	See the map of each habitat for locations including the microhabitats within 
+	the sampling area where samples were taken. 		
+	https://docs.google.com/presentation/d/112FTHi84gQDcd_78vneF7nzcgPe0D2qoUNOyF4ZxU1M/edit?usp=sharing
+
+microhabitat: there were 5 microhabitats sampled within each location 
+  (upstream or downstream) as follows
+	
+	DSR - Downstream slow rocky (on the far side of the river (closer to the 
+	athletic fields), just downstream of some larger rocks where the flow is 
+	slower and there are some large rocks)
+	DSP - Downstream sponge area (in the middle of the river, shallow, fast flow, 
+	lots of sponges present)
+	DFR - Downstream fast rocky (on the far side of the river (closer to the 
+	athletic fields), just upstream of some larger rocks where the flow is faster 
+	and there are some large rocks)
+	DM - Downstream middle (in the middle of the river, moderate flow, just 
+	downstream of the sponge area, lots of small and medium sized rocks)
+	DSH - Downstream shady (on the far side of the river (closer to the 
+	athletic fields), in a very fast flow area and very shaded because right below a 
+	tree, further upstream than DFR)
+
+	USR - Upstream slow rocky (on the close side of the river (closer to the path 
+	and the side with the retaining wall, "downstream of the bend"), 
+	just downstream of some larger rocks where the flow is slower and there are 
+	some large rocks)
+	UFR - Upstream fast rocky (on the close side of the river (closer to the path 
+	and the side with the retaining wall, "downstream of the bend"), just upstream 
+	of some larger rocks where the flow is faster and there are some large rocks)
+	UM - Upstream middle (in the middle of the river near some larger rocks, 
+	moderate flow, "downstream of the bend", lots of smallsized rocks)
+	USH - Upstream shady (on the far side of the river ("upstream of the bend", 
+	further from the path we come in on), in a fast flow area and shaded 
+	because right below a tree)
+	USU - Upstream sunny (on the far side of the river ("upstream of the bend", 
+	further from the path we come in on), in a realtively fast flow area 
+	just downstream of USH that is sunnier 
+	
+
+
+mon.precip: monthly total precipitation in millimeters over a 30 day period 
+  before the sampling date
+	This value was calculated as the total amount of daily precipitation in mm for 
+	the 30 days prior to and including sampling of macroinvertebrates
+
+
+	Daily precipitation in milimeters was downloaded from the 
+	National Oceanographic and Atmospheric Administration (NOAA) 
+	Global Historical Climatology Network (GHCN) 
+	https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/global-historical-climatology-network-ghcn
+      
+      NOAA GHCN weather data were downloaded for Amherst, MA station 
+      (ID = USC00190120) with the rnoaa package in R and the meteo_tidy_ghcnd() 
+      function           
+      Chamberlain, S (2021). rnoaa: 'NOAA' weather data from R. R package version 1.3.2.     
+          https://CRAN.R-project.org/package=rnoaa)
+          
+mon.ADD: monthly aggregated degree days (ADD) for the 30 days prior to sampling 
+  of macroinvertebrates
+       
+      Daily minimum (Tmin) and maximum (Tmax) temperatures in Celcius were 
+      downloaded from the 
+	    National Oceanographic and Atmospheric Administration (NOAA) 
+	    Global Historical Climatology Network (GHCN) 
+	    https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/global-historical-climatology-network-ghcn
+      
+      NOAA GHCN weather data were downloaded for Amherst, MA station 
+      (ID = USC00190120) with the rnoaa package in R and the meteo_tidy_ghcnd() 
+      function           
+      Chamberlain, S (2021). rnoaa: 'NOAA' weather data from R. R package version 1.3.2.     
+          https://CRAN.R-project.org/package=rnoaa)
+          
+      To calculate ADD, the Tmin and Tmax were averaged to give an estimate of 
+      average daily temperature (Tavg). Then the Tavg was summed for 30 days 
+      prior to and including the sampling date 
+	
+	
+mon.max.discharge: monthly maximum discharge in cubic feet per second over a 
+  30 day period before the sampling date
+
+    The "unit value" discharge in cubic feet per second (parameter 00060) for 
+    USGS site 01171500 MILL RIVER AT NORTHAMPTON, MA was downloaded using 
+    the dataRetrieval r package and the readNWISuv() function. This dataset
+    consists of discharge values taken every 15 minutes
+    
+    Data available here 
+    https://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&site_no=01171500
+    Information on using dataRetrieval package here 
+    https://waterdata.usgs.gov/blog/dataretrieval/
+    
+    Then the maximum value was determined for 30 days prior to and including 
+    the sampling date
+    
+mon.median.discharge: monthly median discharge in cubic feet per second over a 
+  30 day period before the sampling date
+
+    The "unit value" discharge in cubic feet per second (parameter 00060) for 
+    USGS site 01171500 MILL RIVER AT NORTHAMPTON, MA was downloaded using 
+    the dataRetrieval r package and the readNWISuv() function. This dataset
+    consists of discharge values taken every 15 minutes
+    
+    Data available here 
+    https://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&site_no=01171500
+    Information on using dataRetrieval package 
+    here https://waterdata.usgs.gov/blog/dataretrieval/
+    
+    Then the median value was calculated for the 30 days prior to and including 
+    the sampling date
+ 
+    
+mon.max.turb: the monthly maximum turbidity measured in 
+  Nephelometric Turbidity Units (NTU) at the Lamont Bridge monitoring station
+
+  The data were downloaded from the "pnd_LamontBridgeStation.Out15" server 
+  available here http://pond.smith.edu/index.html
+  
+    STATION LOCATION: Instruments are  located on the left side first pier of 
+    the Lamont Foot Bridge (Mill River) on the campus of Smith College in 
+    Northampton, Massachusetts.  Datalogger box is located in a steel box at the 
+    east end of the bridge next to the footpath.
+    -----------------------------------------
+    Latitude   42.315599N
+    Longitude  72.640933W
+    Elevation  37m  (Elevation of staff gauge at river level)
+    
+    STATION EQUIPMENT: Campbell Scientific CR1000 datalogger with an 
+    OBS 500 turbidity sensor measuring both sidescatter and backscatter turbidity 
+    (NTU) every 15 minutes. Turbidity here is from the sidescatter measurements 
+    and the maximum value was determined for 30 days prior to and including 
+    the sampling date
+    
+    Note that these values are taken very near the "Downstream" sampling 
+    location, but there is no station near the "Upstream" sampling location. 
+    Also note that the sensor was not working during most of 2022 so that is 
+    why there are missing values
+    
+    
+mon.median.turb: the monthly median turbidity measured in 
+  Nephelometric Turbidity Units (NTU) at the Lamont Bridge monitoring station
+
+  The data were downloaded from the "pnd_LamontBridgeStation.Out15" server 
+  available here http://pond.smith.edu/index.html
+  
+    STATION LOCATION: Instruments are  located on the left side first pier of 
+    the Lamont Foot Bridge (Mill River) on the campus of Smith College in 
+    Northampton, Massachusetts.  Datalogger box is located in a steel box at the 
+    east end of the bridge next to the footpath.
+    -----------------------------------------
+    Latitude   42.315599N
+    Longitude  72.640933W
+    Elevation  37m  (Elevation of staff gauge at river level)
+    
+    STATION EQUIPMENT: Campbell Scientific CR1000 datalogger with an 
+    OBS 500 turbidity sensor measuring both sidescatter and backscatter turbidity 
+    (NTU) every 15 minutes. Turbidity here is from the sidescatter measurements 
+    and the median value was determined for 30 days prior to and including 
+    the sampling date
+    
+    Note that these values are taken very near the "Downstream" sampling 
+    location, but there is no station near the "Upstream" sampling location. 
+    Also note that the sensor was not working during most of 2022 so that is 
+    why there are missing values 
+    
+
+mon.max.wTemp: the monthly maximum water temperature measured in Celsius at the 
+  Lamont Bridge monitoring station
+
+  The data were downloaded from the "pnd_LamontBridgeStation.Out15" server 
+  available here http://pond.smith.edu/index.html
+  
+    STATION LOCATION: Instruments are  located on the left side first pier of 
+    the Lamont Foot Bridge (Mill River) on the campus of Smith College in 
+    Northampton, Massachusetts.  Datalogger box is located in a steel box at the 
+    east end of the bridge next to the footpath.
+    -----------------------------------------
+    Latitude   42.315599N
+    Longitude  72.640933W
+    Elevation  37m  (Elevation of staff gauge at river level)
+    
+    STATION EQUIPMENT: Campbell Scientific CR1000 datalogger with an 
+    OBS 500 turbidity sensor measuring the water temperature every 15 minutes 
+    and the maximum value was calculated for 30 days prior to and including the 
+    sampling date
+    
+    Note that these values are taken very near the "Downstream" sampling 
+    location, but there is no station near the "Upstream" sampling location. 
+    Also note that the sensor was not working during most of 2022 so that is 
+    why there are missing values 
+    
+    
+mon.median.wTemp: the monthly median water temperature measured in Celsius at the 
+  Lamont Bridge monitoring station
+
+  The data were downloaded from the "pnd_LamontBridgeStation.Out15" server 
+  available here http://pond.smith.edu/index.html
+  
+    STATION LOCATION: Instruments are  located on the left side first pier of 
+    the Lamont Foot Bridge (Mill River) on the campus of Smith College in 
+    Northampton, Massachusetts.  Datalogger box is located in a steel box at the 
+    east end of the bridge next to the footpath.
+    -----------------------------------------
+    Latitude   42.315599N
+    Longitude  72.640933W
+    Elevation  37m  (Elevation of staff gauge at river level)
+    
+    STATION EQUIPMENT: Campbell Scientific CR1000 datalogger with an 
+    OBS 500 turbidity sensor measuring the water temperature every 15 minutes 
+    and the median value was calculated for 30 days prior to and including the 
+    sampling date
+    
+    Note that these values are taken very near the "Downstream" sampling 
+    location, but there is no station near the "Upstream" sampling location. 
+    Also note that the sensor was not working during most of 2022 so that is 
+    why there are missing values 
+ 
+
+MOST OF THE FOLLOWING VALUES WERE AVERAGED IF MORE THAN ONE QUADRAT WAS SAMPLED 
+IN THE SAME MICROHABITAT ON THE SAME DAY. GENERALLY, 1-2 QUADRATS WERE SAMPLED 
+IN EACH MICROHABITAT ON THE SAME DAY. 
+
+depth: depth of the water in centimeters taken in the center of the quadrat
+  measured with a meter stick with millimeter marking
+
+per_sediment: the percent of the quadrat that was covered in finer sediment 
+  (clay, sand, fine gravel) 
+
+per_rock: the percent of the quadrat that was covered in rocks 
+  (small to large rocks)
+
+per_organic: the percent of the quadrat that was covered in visible organic 
+  matter such as leaves and sticks 
+
+pH: the pH 
+	pH was measured using an Oakton pH Testr 50 Waterproof Pocket pH Tester 
+	(accuracy: ±0.01 pH). Effort was made to wait until the meter 
+	stabilized on a reading before the pH was recorded
+	
+	pH was calibrated ahead of time using buffers made using the Vernier pH 
+	capsule set.	
+
+wTemp: Water temperature was measured in Celcius by different tools depending on year
+
+	2018-2019 we used the Vernier Stainless Steel Temperature Probe 
+	(accuracy: ±0.2°C at 0°C, ±0.5°C at 100°C) . 
+	https://www.vernier.com/manuals/tmp-bta/
+	
+	Starting in 2020, we used the Oakton pH Testr 50 Waterproof Pocket pH Tester 
+	(accuracy: ±0.2°C) to minimize the number of different tools to bring in the field
+
+
+	In all cases, the reading taken just below the surface once the reading 
+	seemed to stabilize. 
+
+
+DO: Dissolved oxygen was measured in milligrams of oxygen per liter by the 
+  Vernier Optical Dissolved Oxygen Probe (accurate to ± 0.1 mg/L). 
+	https://www.vernier.com/manuals/odo-bta/
+	
+	The reading taken just below the surface (with the probe all the way in the 
+	water at least up to the temperature sensor) and was a 10 second average. 
+	Effort was made to make sure that the probe had settled on a reading before 
+	it was recorded (it can take a little while for the first reading or two to 
+	settle as the temperature adjusts)
+	
+	The probe was calibrated using a 100% saturation value determined by placing 
+	the probe in the storage cap with distilled water saturating the sponge 
+	(so the air was 100% saturated with water)
+	
+
+light: The photosyntehtically active radiation was measured in photosynthetic 
+  photon flux density (PPFD) which corresponds to the micromoles of photons 
+  per meter squared per second
+	https://www.vernier.com/files/manuals/par-bta.pdf
+	
+	The sensor was mounted on a PVC pipe with one section that was bent to be 
+	parallel to the bottom of the river.  
+	The sensor faced upstream (with the cord facing downstream)
+	and care was taken to not let our shaddows interfere with the sensor.
+	The reading taken was a 10 second average. 
+	
+	PAR range 0 to 2000 umol m-2 s-1 (in full sun)
+	Absolute accuracy ±5% (full scale)
+	Repeatability ±1%
+	Long-term drift Less than 2% per year
+	Cosine response
+		 45º ±2%
+ 		75º ±5%
+	Spectral range 410–655 nm
+	Resolution 1 umol m-2 s-1
+	Operating environment –40 to 70˚ C
+		0–100% relative humidity
+	Sensor head and cable can be submerged in water to electronics box.
+	Stored calibration values
+		slope 500 umol m-2 s-1/ V
+		intercept 0 
+
+
+flow: the flow rate of the water in meters per second
+	flow rate was measured in meters per second by the Vernier Flow Rate Sensor 
+	(without any spacer on the bottom) (accurate to 0.04 m/s, resolution of 0.0012 m/s). 	
+	https://www.vernier.com/files/manuals/flo-bta.pdf
+	Note that this sensor does not measure really low flows well, there were times 
+	when the water could be seen to be moving very slowly but the propeller did 
+	not spin at all.
+	Flow measurement was taken by facing the propeller upstream and taking a 
+	10 second average.
+	The flow rate sensor was zeroed before measurements began.
+  
+  
+turb: Turbidity was measured in Nephelometric Turbidity Units (NTU) by the 
+  Vernier Turbidity Sensor (accurate to ±2 NTU for readings under 25 NTU). 	
+  https://www.vernier.com/files/manuals/trb-bta.pdf
+	Samples of water from each location were taken with a clean turbidity bottle 
+	(https://www.vernier.com/products/accessories/trb-bot/)
+	Calibration was done using Millipore filtered RO water and the 100 NTU 
+	calibration bottle that came with the sensor.  
+	All bottles were tipped upside down three times before a measurement was taken 
+	or calibration was performed
+	Bottles were wiped clean by a Kim Wipe before the bottle was placed in the sensor.
+	
+	
+cond: Conductivity was measured in µS/cm by the Vernier Conductivity Probe 
+  (accurate to ±2% of full-scale). https://www.vernier.com/manuals/con-bta/
+  
+  A sample of water was taken from each microhabitat and measured in lab that 
+  afternoon (right after sampling) or the next morning
+  
+	The conductivity probe was calibrated with Millipore filtered RO water and 
+	conductivity standard solution (low) of 150 µ S/cm. 
+	https://www.vernier.com/products/accessories/con-lst/
+
+	Low range: 0 to 200 µS/cm (0 to 100 mg/L TDS)
+	Mid range: 0 to 2000 µS/cm (0 to 1000 mg/L TDS)
+	High range: 0 to 20,000 µS/cm (0 to 10,000 mg/L TDS)
+
+
+
+nitrate: the concentration of Nitrate (NO3–) in mg/L (=ppm) in the water as 
+  measured by the Vernier Nitrate Ion-Selective Electrode
+  (accurate to ±10% of full scale (calibrated 1 to 100 mg/L)). 
+  https://www.vernier.com/product/nitrate-ion-selective-electrode/
+  
+  A sample of water was taken from each microhabitat and measured in lab that 
+  afternoon (right after sampling) or the next morning
+  
+  The Nitrate Ion-Selective Electrode was calibrated with a low (1 mg/L) and 
+  high (100 mg/L) Nitrate standard that were each purchased from Vernier 
+  (catalog codes NO3-LST and NO3_HST respectively).
+
+  These measurements were begun in Summer 2022 (we did not have the equipment to
+  measure it before then)
+
+alkalinity: the total alkalinity of a water sample in ppm of CaCO3
+
+  Starting in Fall 2022, alkalinity was measured using the Hanna Instruments 
+  Freshwater Alkalinity Checker (order code: HI775, 
+  https://www.hannainst.com/hi775-alkalinity-freshwater.html). 
+  This colorimeter has a resolution of 1 ppm and and accuracy of ±5 ppm or ±5% 
+  of reading. The instrument displays the alkalinity concentration in ppm of CaCO3. 
+  Alkalinity conversion: 1 ppm CaCO3 = 0.02 meq/L = 0.056 dkH
+  
+  A sample of water was taken from each microhabitat and measured in lab that 
+  afternoon (right after sampling) or the next morning
+
+winter.sediment: The total amount of sediment released during the winter before macroinvertebrate sampling measured in cubic meters. 
+  
+  These numbers were obtained from Bob Newton

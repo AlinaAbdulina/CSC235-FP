@@ -1,0 +1,29 @@
+variable,variable_label,variable_type,variable_info
+date,Date,date,sampling date in yyyy-mm-dd format
+year,Year,discrete or categorical,year in which the sampling took place
+season,Season,categorical,season in which the sampling took place - Summer or Fall
+location,Location,categorical,"location in the river - Upstream or Downstream of Paradise Pond in the Mill River, Northampton, MA"
+sampleID,Sample ID code,character,unique identification for each sampling day for each microhabitat
+microhabitat,Microhabitat,character,microhabitat within the sampling area where samples were taken
+mon.precip,Monthly Precipitation (mm),continuous,monthly total precipitation in millimeters over a 30 day period before the sampling date
+mon.ADD,Monthly Aggregated Degree Days,continuous,monthly aggregated degree days (ADD) for the 30 days prior to sampling of macroinvertebrates
+mon.max.discharge,Monthly Maximum Discharge (ft^3/s),continuous,monthly maximum discharge in cubic feet per second over a 30 day period before the sampling date
+mon.median.discharge,Monthly Median Discharge (ft^3/s),continuous,monthly median discharge in cubic feet per second over a 30 day period before the sampling date
+mon.max.turb,Monthly Maximum Turbidity (NTU),continuous,monthly maximum turbidity measured in Nephelometric Turbidity Units (NTU) at the Lamont Bridge monitoring station
+mon.median.turb,Monthly Median Turbidity (NTU),continuous,monthly median turbidity measured in Nephelometric Turbidity Units (NTU) at the Lamont Bridge monitoring station
+mon.max.wTemp,Monthly Maximum Water Temperature (*C),continuous,monthly maximum water temperature measured in Celsius at the Lamont Bridge monitoring station
+mon.median.wTemp,Monthly Median Water Temperature (*C),continuous,monthly median water temperature measured in Celsius at the Lamont Bridge monitoring station
+depth,Water Depth (cm),continuous,depth of the water in centimeters
+per_sediment,Sediment Percent Cover,disctrete (proportion),"percent of the quadrat that was covered in finer sediment (clay, sand, fine gravel) "
+per_rock,Rock Percent Cover,disctrete (proportion),percent of the quadrat that was covered in rocks (small to large rocks)
+per_organic,Organic Matter Percent Cover,disctrete (proportion),percent of the quadrat that was covered in visible organic matter such as leaves and sticks 
+pH,pH,continuous,the pH (no units)
+wTemp,Water Temperature (*C),continuous,Water temperature measured in Celcius
+DO,Dissolved Oxygen (mg/L),continuous,Dissolved oxygen measured in milligrams of oxygen per liter
+light,Photosynthetic active radiation (PPFD),continuous,Photosyntehtically active radiation was measured in photosynthetic photon flux density (PPFD) which corresponds to the micromoles of photons per meter squared per second
+flow,Flow Rate (m/s),continuous,Flow rate of the water in meters per second
+turb,Turbidity (NTU),continuous,Turbidity measured in Nephelometric Turbidity Units (NTU)
+cond,Conductivity (microS/cm),continuous,Conductivity measured in microsiemens per centimeter (µS/cm)
+nitrate,Nitrate Concentration (mg/L),continuous,the concentration of Nitrate (NO3–) in milligrams per liter (mg/L) (=ppm) in the water
+alkalinity,Alkalinity (ppm of CaCO3),continuous,the total alkalinity of a water sample in parts per million of calcium carbonate (ppm of CaCO3)
+winter.sediment,Sediment Released (m^3),continuous,The total amount of sediment released from Paradise Pond to the location downstream during the winter before macroinvertebrate sampling measured in cubic meters
