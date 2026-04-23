@@ -1,0 +1,42 @@
+---
+title: "data_cleaning"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse) ## for readr, dplyr, ggplot2
+```
+
+
+## Combining env + macros + master_taxa 
+
+```{r}
+#| label: data wrangling
+#| message: false
+#| warning: false
+#| 
+##calculate the number of each taxon of interest in each sampleID
+macro.taxa <- macros |> 
+  
+  #join taxonomic information 
+  left_join(master_taxa) |> 
+  
+  # Summarize for each sampleID and taxon 
+  group_by(sampleID, taxon_group, benthicArea) |> 
+  dplyr::summarise(number = sum(number, na.rm = TRUE)) |> 
+  ungroup() |> 
+  
+  #calculate the density for your taxon for each sampleID
+  mutate(density = number/benthicArea)
+
+#join the macros and env data
+vis_analysis_data <- left_join(macro.taxa, env) |> 
+  
+    #remove variables that are not needed
+    #(too many zeros or never correlates with much)
+     dplyr::select(-nitrate, -alkalinity, 
+                   -per_sediment, -per_rock, -per_organic,
+                   -mon.max.wTemp, -mon.median.wTemp,
+                   -mon.median.turb, -mon.max.turb)
+```
