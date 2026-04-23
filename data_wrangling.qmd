@@ -29,7 +29,7 @@ macro.taxa <- macros |>
   left_join(master.taxa) |> 
   
   # Summarize for each sampleID and taxon 
-  group_by(sampleID, taxon_group, benthicArea) |> 
+  group_by(sampleID, taxon_group, benthicArea, FFG) |> 
   dplyr::summarise(number = sum(number, na.rm = TRUE)) |> 
   ungroup() |> 
   
@@ -46,3 +46,12 @@ vis_analysis_data <- left_join(macro.taxa, env) |>
                    -mon.max.wTemp, -mon.median.wTemp,
                    -mon.median.turb, -mon.max.turb)
 ```
+
+
+```{r}
+write.csv(vis_analysis_data, "vis_analysis.csv", row.names = FALSE)
+```
+
+
+
+
