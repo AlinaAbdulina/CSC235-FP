@@ -5,11 +5,17 @@ editor: visual
 ---
 
 ```{r}
+library(readr)
 library(tidyverse) ## for readr, dplyr, ggplot2
 ```
 
+```{r}
+env <- read_csv("env.csv")
+macros <- read_csv("macros.csv")
+master.taxa <- read_csv("master.taxa.csv")
+```
 
-## Combining env + macros + master_taxa 
+## Combining env + macros + master_taxa
 
 ```{r}
 #| label: data wrangling
@@ -20,7 +26,7 @@ library(tidyverse) ## for readr, dplyr, ggplot2
 macro.taxa <- macros |> 
   
   #join taxonomic information 
-  left_join(master_taxa) |> 
+  left_join(master.taxa) |> 
   
   # Summarize for each sampleID and taxon 
   group_by(sampleID, taxon_group, benthicArea) |> 
