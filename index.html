@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who is in Paradise Pond?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <div class="brand">CSC 235 Final Project</div>
+      <div class="team">Alina ~ Meron ~ Tomoko</div>
+    </nav>
+
+    <section class="hero-content">
+      <p class="eyebrow">Visual Analytics for Environmental Data</p>
+      <h1>Who is in Paradise Pond?</h1>
+
+      <p class="subtitle">
+        An interactive exploration of upstream and downstream environmental patterns
+        in and around Paradise Pond and the Mill River.
+      </p>
+
+      <p class="intro">
+        This project explores how Paradise Pond may shape river conditions and aquatic life.
+        We are building an interface that helps users compare conditions before and after
+        sediment redistribution and see how macroinvertebrate groups relate to those changes.
+      </p>
+
+      <p class="intro">
+        Our current prototype focuses on three connected views: one centered on pH,
+        one centered on conductivity or density patterns across taxon groups, and one
+        centered on flow and functional feeding groups.
+      </p>
+    </section>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <p class="section-label">About the Project</p>
+      <h2>What are we exploring?</h2>
+
+      <div class="two-column">
+        <div class="left-column">
+          <p>
+            We are studying how sediment redistribution in Paradise Pond may be connected
+            to changes in the Mill River ecosystem. Our project compares the two sampling
+            sites around the pond and helps users explore how environmental variables and
+            macroinvertebrate groups vary across time.
+          </p>
+
+          <p>
+            The dashboard is designed to support comparison, filtering, and close reading
+            of specific groups. Users will be able to move between broad patterns and
+            more detailed group-level views.
+          </p>
+        </div>
+
+        <div class="right-column">
+          <div class="mini-card">
+            <h3>Study frame</h3>
+            <p>Seasons sampled: Summer and Fall</p>
+            <p>Before period: 2019</p>
+            <p>After period: 2020–2024</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Site comparison</h3>
+            <p><span class="dot upstream"></span> Upstream = control</p>
+            <p><span class="dot downstream"></span> Downstream = impact</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="cards">
+        <article class="info-card">
+          <h3>Why upstream and downstream?</h3>
+          <p>
+            Upstream gives us a control site, while downstream helps us look for possible
+            effects connected to the pond and sediment redistribution.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>Why these variables?</h3>
+          <p>
+            We are focusing on pH, conductivity, flow, and group-level biological patterns
+            because these seem more informative than water temperature for this question.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>What can users do?</h3>
+          <p>
+            Users will be able to compare before vs after periods, filter by season,
+            and focus on particular taxon or feeding groups to inspect differences.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section map-section">
+      <p class="section-label">Study Area</p>
+      <h2>Where are the sampling sites?</h2>
+      <p class="dashboard-note">
+        The project compares a upstream of Paradise Pond with a  downstream.
+      </p>
+      <p>
+        Upstream, Paradise Pond, Downstream
+
+        <!-- implement in map here later -->
+      </p>
+    </section>
+
+    <section id="dashboard" class="section">
+      <p class="section-label">Prototype Here</p>
+      <h2>Visualization plan</h2>
+      <p class="dashboard-note">
+        The final dashboard will include three linked views. For now, these are scaffold
+        areas for the visualizations and controls.
+      </p>
+
+
+          <div class="viz-header">
+            <h3>Graph 1</h3>
+            <p>pH and taxon groups</p>
+Before / after comparison with upstream and downstream on the same chart</span>
+          <div class="viz-notes">
+            <p><strong>Focus:</strong> pH relationships by taxon group</p>
+            <p><strong>Filters:</strong> season, taxon group, metric mode</p>
+          </div>
+
+
+          <div class="viz-header">
+            <h3>Graph 2</h3>
+            <p>Coordinated taxon view</p>
+          </div>
+            <span>Second linked graph for before / after taxon patterns</span>
+          <div class="viz-notes">
+            <p><strong>Focus:</strong> conductivity or density / count patterns</p>
+            <p><strong>Interaction:</strong> highlight selected groups and points</p>
+          </div>
+        </div>
+
+
+            <h3>Graph 3</h3>
+            <p>Flow and feeding groups</p>
+          </div>
+            <span>Feeding group view comparing upstream and downstream across seasons</span>
+          <div class="viz-notes">
+            <p><strong>Focus:</strong> flow and functional feeding groups</p>
+            <p><strong>Interaction:</strong> filter to one feeding group and compare it to the rest</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <p class="section-label">Research Context</p>
+      <h2>What we have learned so far</h2>
+      <div class="context-list">
+        <div class="context-item">
+          <h3>Season matters</h3>
+          <p>
+            Summer tends to be more stable, while Fall is more variable, so season needs
+            to stay visible in the interface.
+          </p>
+        </div>
+
+        <div class="context-item">
+          <h3>Downstream often differs</h3>
+          <p>
+            Downstream generally shows lower pH and slightly higher flow and conductivity,
+            along with greater overall macroinvertebrate density.
+          </p>
+        </div>
+
+        <div class="context-item">
+          <h3>Groups respond differently</h3>
+          <p>
+            Collector filterers are often more abundant downstream, while scraper and
+            collector gatherer patterns are more mixed and dynamic.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>CSC 235 • Spring 2026</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
