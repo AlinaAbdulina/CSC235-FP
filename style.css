@@ -90,6 +90,12 @@ p {
   line-height: 1.6;
 }
 
+code {
+  background: #f2f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
 .alt {
   background-color: #f7f9fc;
   border-top: 1px solid #d7e0ea;
@@ -141,11 +147,11 @@ p {
 }
 
 .upstream {
-  background-color: #4f79a7;
+  background-color: #1b9e77;
 }
 
 .downstream {
-  background-color: #183a66;
+  background-color: #d95f02;
 }
 
 .cards {
@@ -182,60 +188,30 @@ p {
   line-height: 1.5;
 }
 
-.map-section {
-  padding-bottom: 60px;
-}
-
-.map-placeholder {
-  position: relative;
-  height: 280px;
-  border: 1px solid #c9d3e0;
-  background-color: #fcfdff;
-  margin-top: 20px;
-}
-
-.river-line {
-  position: absolute;
-  top: 130px;
-  left: 120px;
-  width: 700px;
-  height: 12px;
-  background-color: #d9e6f5;
-  border-radius: 20px;
-}
-
-.pond-box {
-  position: absolute;
-  top: 70px;
-  left: 430px;
-  background-color: #183a66;
-  color: white;
-  padding: 10px 16px;
-  font-size: 18px;
-}
-
-.site {
-  position: absolute;
-  background-color: white;
-  border: 1px solid #0d2a52;
-  padding: 8px 14px;
-  font-size: 17px;
-}
-
-.upstream-site {
-  top: 95px;
-  left: 180px;
-}
-
-.downstream-site {
-  top: 165px;
-  left: 680px;
-}
-
 .dashboard-note {
   font-size: 18px;
   margin-bottom: 20px;
-  max-width: 800px;
+  max-width: 850px;
+}
+
+.chart-controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.control-group label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.control-group select {
+  padding: 6px 10px;
+  font-size: 15px;
+  border: 1px solid #7d94b3;
+  background-color: white;
+  color: #0d2a52;
 }
 
 .dashboard-grid {
@@ -278,18 +254,20 @@ p {
 
 .viz-box {
   border: 1px dashed #7d94b3;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  color: #446188;
+  min-height: 280px;
+  padding: 10px;
   background-color: white;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .large-box {
-  height: 250px;
+  min-height: 340px;
+}
+
+.chart-holder {
+  width: 100%;
+  height: 100%;
 }
 
 .viz-notes {
@@ -299,6 +277,63 @@ p {
 .viz-notes p {
   margin: 6px 0;
   font-size: 16px;
+}
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.axis path,
+.axis line {
+  stroke: #0d2a52;
+}
+
+.axis text {
+  fill: #446188;
+  font-size: 12px;
+}
+
+.grid line {
+  stroke: #d7e0ea;
+  stroke-opacity: 1;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.axis-label {
+  fill: #446188;
+  font-size: 12px;
+}
+
+.legend-text {
+  fill: #0d2a52;
+  font-size: 12px;
+}
+
+.point-upstream {
+  fill: #1b9e77;
+  opacity: 0.82;
+  cursor: pointer;
+}
+
+.point-downstream {
+  fill: #d95f02;
+  opacity: 0.82;
+  cursor: pointer;
+}
+
+.point-dim {
+  opacity: 0.14;
+}
+
+.point-active {
+  stroke: #7b1e7a;
+  stroke-width: 2.2;
 }
 
 .context-list {
@@ -339,6 +374,23 @@ p {
   color: #446188;
 }
 
+.tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #c9d3e0;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #0d2a52;
+  pointer-events: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  max-width: 240px;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .brand,
   .team {
@@ -366,20 +418,11 @@ p {
     margin-bottom: 20px;
   }
 
-  .river-line {
-    left: 30px;
-    width: 80%;
+  .chart-controls {
+    display: block;
   }
 
-  .upstream-site {
-    left: 40px;
-  }
-
-  .pond-box {
-    left: 35%;
-  }
-
-  .downstream-site {
-    left: 62%;
+  .control-group {
+    margin-bottom: 12px;
   }
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Who is in Paradise Pond?</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
 <body>
@@ -26,14 +26,8 @@
 
       <p class="intro">
         This project explores how Paradise Pond may shape river conditions and aquatic life.
-        We are building an interface that helps users compare conditions before and after
-        sediment redistribution and see how macroinvertebrate groups relate to those changes.
-      </p>
-
-      <p class="intro">
-        Our current prototype focuses on three connected views: one centered on pH,
-        one centered on conductivity or density patterns across taxon groups, and one
-        centered on flow and functional feeding groups.
+        We compare conditions before and after sediment redistribution and examine how
+        macroinvertebrate feeding groups relate to changes in pH, conductivity, and flow.
       </p>
     </section>
   </header>
@@ -47,15 +41,14 @@
         <div class="left-column">
           <p>
             We are studying how sediment redistribution in Paradise Pond may be connected
-            to changes in the Mill River ecosystem. Our project compares the two sampling
-            sites around the pond and helps users explore how environmental variables and
-            macroinvertebrate groups vary across time.
+            to changes in the Mill River ecosystem. The dashboard compares upstream and
+            downstream sampling sites and lets users inspect how environmental variables
+            relate to macroinvertebrate feeding groups.
           </p>
 
           <p>
-            The dashboard is designed to support comparison, filtering, and close reading
-            of specific groups. Users will be able to move between broad patterns and
-            more detailed group-level views.
+            The views are linked, so selecting one feeding group updates all charts at once.
+            This helps users move between broad patterns and more focused group-level comparisons.
           </p>
         </div>
 
@@ -89,82 +82,106 @@
         <article class="info-card">
           <h3>Why these variables?</h3>
           <p>
-            We are focusing on pH, conductivity, flow, and group-level biological patterns
-            because these seem more informative than water temperature for this question.
+            We focus on pH, conductivity, and flow because these variables help tell the
+            environmental story more clearly than water temperature for this question.
           </p>
         </article>
 
         <article class="info-card">
           <h3>What can users do?</h3>
           <p>
-            Users will be able to compare before vs after periods, filter by season,
-            and focus on particular taxon or feeding groups to inspect differences.
+            Users can compare feeding groups across upstream and downstream locations,
+            filter by season and period, and inspect individual points in the charts.
           </p>
         </article>
       </div>
     </section>
 
-    <section class="section map-section">
-      <p class="section-label">Study Area</p>
-      <h2>Where are the sampling sites?</h2>
-      <p class="dashboard-note">
-        The project compares a upstream of Paradise Pond with a  downstream.
-      </p>
-      <p>
-        Upstream and Downstream of the Mill River
-        <!-- implement in map here later -->
-      </p>
-    </section>
-
     <section id="dashboard" class="section">
-      <p class="section-label">Prototype Here</p>
+      <p class="section-label">Interactive Dashboard</p>
       <h2>Visualization plan</h2>
       <p class="dashboard-note">
-        The final dashboard will include three linked views. For now, these are scaffold
-        areas for the visualizations and controls.
+        The dashboard includes three linked views built from the real <code>vis_analysis.csv</code>.
+        Click a point or use the dropdowns to highlight one feeding group across all views.
       </p>
 
+      <div class="chart-controls">
+        <div class="control-group">
+          <label for="seasonFilter"><strong>Season:</strong></label>
+          <select id="seasonFilter">
+            <option value="All">All</option>
+          </select>
+        </div>
 
+        <div class="control-group">
+          <label for="periodFilter"><strong>Period:</strong></label>
+          <select id="periodFilter">
+            <option value="All">All</option>
+            <option value="Before">Before</option>
+            <option value="After">After</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="ffgFilter"><strong>Feeding group:</strong></label>
+          <select id="ffgFilter">
+            <option value="All">All</option>
+          </select>
+        </div>
+
+        <button id="resetBtn" type="button">Reset</button>
+      </div>
+
+      <div id="statusMessage" class="status-message">Loading data...</div>
+
+      <div class="dashboard-grid">
+        <div class="viz-card">
           <div class="viz-header">
             <h3>Graph 1</h3>
-            <p>pH and taxon groups</p>
-Before / after comparison with upstream and downstream on the same chart</span>
-          <div class="viz-notes">
-            <p><strong>Focus:</strong> pH relationships by taxon group</p>
-            <p><strong>Filters:</strong> season, taxon group, metric mode</p>
-            <p><strong>Overall trend of downstream pH between 2019 and 2024:</strong> We examine in the original report that one of the strongest correlations occurs between winter.sediment, which indicates the amount of sediment dredged that particular year in Paradise Pond, and the pH of the downstream Mill River.</p>
-            <p>The upstream sampling site for the Mill River consistently demonstrates pH levels between 7.5 and 8.25. The years 2019, 2020, and 2022 look nearly identical, while 202 and 2023 has pH between 7.5 and 8, and 2024 dips below pH 7.5 for the first time. As for downstream behavior, the pH is indicated to be between 7.2 and 7.5 for 2020 and 2021, pH range is smaller between 7.3 and 7.4  for 2023 and 2024, and 2022 appears to have more of a range of pH 7.3 to 7.8, shifted higher than usual. Generally, we observe that Downstream pH is consistently lower pH, than upstream Mill River, and more dredging appears to have little effect on making the downstream pH more consistent with upstream pH. 2020 appears to have the most similar pH values across upstream and downstream, as downstream records pH between 7.3 and 7.8, and upstream records pH between 7.5 and 8.25.</p>
+            <p>pH and feeding groups</p>
           </div>
-
-
-          <div class="viz-header">
-            <h3>Graph 2</h3>
-            <p>Coordinated taxon view</p>
-          </div>
-            <span>Second linked graph for before / after taxon patterns</span>
+          <div class="viz-box" id="graph1"></div>
           <div class="viz-notes">
-            <p><strong>Focus:</strong> conductivity or density / count patterns</p>
-            <p><strong>Interaction:</strong> highlight selected groups and points</p>
-            <p><strong>Overall trend of downstream conductivity between 2019 and 2024:</strong> One of the variables that strongly affected the density of feeding groups with all else held constant was the average conductivity of the downstream area. On average, Conductivity of the Downstream Mill River was higher than that of the Upstream sampling area, corresponding to the increase in winter sediment dredging. While the Upstream and Downstream conductivity follows a general downward trend over the summer and fall seasons in between 2019 and 2024, the average downstream conductivity is always higher than that of the upstream sampling site with the exception of 2023. We observe that dredging causes conductivity of the downstream region to increase. Observing the density of each feeding group by filtering per for the six feeding groups by individual year  and season allows us to see how the high conductivity impacts the specific feeding groups.</p>
+            <p><strong>Focus:</strong> pH relationships by feeding group</p>
+            <p><strong>Encoding:</strong> x = pH, y = density, color = location</p>
+            <p><strong>Coordinated view:</strong> selecting a feeding group updates Graph 2 and Graph 3</p>
           </div>
         </div>
 
+        <div class="viz-card">
+          <div class="viz-header">
+            <h3>Graph 2</h3>
+            <p>Conductivity and feeding groups</p>
+          </div>
+          <div class="viz-box" id="graph2"></div>
+          <div class="viz-notes">
+            <p><strong>Focus:</strong> conductivity and density patterns</p>
+            <p><strong>Encoding:</strong> x = conductivity, y = density, color = location</p>
+            <p><strong>Interaction:</strong> highlight selected groups and compare upstream vs downstream</p>
+          </div>
+        </div>
 
+        <div class="viz-card full-width">
+          <div class="viz-header">
             <h3>Graph 3</h3>
             <p>Flow and feeding groups</p>
           </div>
-            <span>Feeding group view comparing upstream and downstream across seasons</span>
+          <div class="viz-box large-box" id="graph3"></div>
           <div class="viz-notes">
             <p><strong>Focus:</strong> flow and functional feeding groups</p>
+            <p><strong>Encoding:</strong> x = flow, y = density, color = location</p>
             <p><strong>Interaction:</strong> filter to one feeding group and compare it to the rest</p>
           </div>
         </div>
       </div>
+
+      <div id="tooltip" class="tooltip hidden"></div>
     </section>
 
     <section class="section alt">
       <p class="section-label">Research Context</p>
       <h2>What we have learned so far</h2>
+
       <div class="context-list">
         <div class="context-item">
           <h3>Season matters</h3>
