@@ -159,6 +159,22 @@ Dataset used:
 
 ---
 
+# Data Cleaning and Processing
+
+The original dataset was cleaned and transformed for visualization in JavaScript using D3.js.
+
+Processing steps included:
+- 
+
+
+---
+
+# Known Issues
+
+- Some filter combinations may produce very small datasets eg :before dredging , in the fall.
+- Dense scatterplot regions may contain overlapping points.
+- The dashboard is optimized for desktop viewing and may not fully support smaller mobile screens.
+
 # Future Improvements
 
 Potential future additions include:
