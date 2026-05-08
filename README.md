@@ -148,6 +148,16 @@ project-folder/
 
 ---
 
+# Interpreting the Dashboard
+
+The dashboard is designed to support comparison between upstream and downstream sampling locations across multiple environmental variables.
+
+- Graph 1 compares pH and macroinvertebrate density.
+- Graph 2 compares conductivity and density patterns.
+- Graph 3 summarizes average density by feeding group and location.
+
+Users can filter the dashboard by season, sediment redistribution period, and feeding group to explore how ecological patterns vary across conditions.
+
 # Data Source
 
 Environmental and macroinvertebrate sampling data provided by:
