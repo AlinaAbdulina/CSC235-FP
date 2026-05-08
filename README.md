@@ -164,8 +164,11 @@ Dataset used:
 The original dataset was cleaned and transformed for visualization in JavaScript using D3.js.
 
 Processing steps included:
-- 
-
+- importing data 
+- joining macros.csv, master.taxa.csv and env.csv
+- summarizing sampleID and taxon
+- calculating density 
+- removing irrelevant variables
 
 ---
 
