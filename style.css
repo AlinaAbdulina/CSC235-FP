@@ -458,4 +458,41 @@ code {
   .control-group {
     margin-bottom: 12px;
   }
+  .compact-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.quick-facts {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.fact-card {
+  width: 30%;
+  float: left;
+  margin-right: 3.333%;
+  background-color: white;
+  border: 1px solid #d7e0ea;
+  padding: 18px;
+  box-sizing: border-box;
+  min-height: 150px;
+}
+
+.fact-card:last-child {
+  margin-right: 0;
+}
+
+.fact-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.fact-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
 }

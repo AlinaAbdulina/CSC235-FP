@@ -20,80 +20,42 @@
       <h1>Who is in Paradise Pond?</h1>
 
       <p class="subtitle">
-        An interactive exploration of upstream and downstream environmental patterns
-        in and around Paradise Pond and the Mill River.
+        Explore how upstream and downstream river conditions relate to macroinvertebrate feeding groups.
       </p>
 
       <p class="intro">
-        This project explores how Paradise Pond may shape river conditions and aquatic life.
-        We compare conditions before and after sediment redistribution and examine how
-        macroinvertebrate feeding groups relate to changes in pH, conductivity, and flow.
+        This dashboard compares pH, conductivity, flow, and density across season, period,
+        and location using data from the Mill River and Paradise Pond.
       </p>
     </section>
   </header>
 
   <main>
-    <section id="about" class="section">
-      <p class="section-label">About the Project</p>
-      <h2>What are we exploring?</h2>
+    <section class="section compact-section">
+      <p class="section-label">Quick Context</p>
+      <h2>What this dashboard helps you compare</h2>
 
-      <div class="two-column">
-        <div class="left-column">
-          <p>
-            We are studying how sediment redistribution in Paradise Pond may be connected
-            to changes in the Mill River ecosystem. The dashboard compares upstream and
-            downstream sampling sites and lets users inspect how environmental variables
-            relate to macroinvertebrate feeding groups.
-          </p>
-
-          <p>
-            The views are linked, so selecting one feeding group updates all charts at once.
-            This helps users move between broad patterns and more focused group-level comparisons.
-          </p>
+      <div class="quick-facts">
+        <div class="fact-card">
+          <h3>Sites</h3>
+          <p><span class="dot upstream"></span> Upstream = control</p>
+          <p><span class="dot downstream"></span> Downstream = impact</p>
         </div>
 
-        <div class="right-column">
-          <div class="mini-card">
-            <h3>Study frame</h3>
-            <p>Seasons sampled: Summer and Fall</p>
-            <p>Before period: 2019</p>
-            <p>After period: 2020–2024</p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Site comparison</h3>
-            <p><span class="dot upstream"></span> Upstream = control</p>
-            <p><span class="dot downstream"></span> Downstream = impact</p>
-          </div>
+        <div class="fact-card">
+          <h3>Time</h3>
+          <p>Summer and Fall</p>
+          <p>2019 = Before</p>
+          <p>2020–2024 = After</p>
         </div>
-      </div>
-    </section>
 
-    <section class="section alt">
-      <div class="cards">
-        <article class="info-card">
-          <h3>Why upstream and downstream?</h3>
-          <p>
-            Upstream gives us a control site, while downstream helps us look for possible
-            effects connected to the pond and sediment redistribution.
-          </p>
-        </article>
-
-        <article class="info-card">
-          <h3>Why these variables?</h3>
-          <p>
-            We focus on pH, conductivity, and flow because these variables help tell the
-            environmental story more clearly than water temperature for this question.
-          </p>
-        </article>
-
-        <article class="info-card">
-          <h3>What can users do?</h3>
-          <p>
-            Users can compare feeding groups across upstream and downstream locations,
-            filter by season and period, and inspect individual points in the charts.
-          </p>
-        </article>
+        <div class="fact-card">
+          <h3>Variables</h3>
+          <p>pH</p>
+          <p>Conductivity</p>
+          <p>Flow</p>
+          <p>Density</p>
+        </div>
       </div>
     </section>
 
@@ -103,8 +65,7 @@
 
       <p class="dashboard-note">
         Start by choosing a season, period, or feeding group. Then compare upstream and
-        downstream across all three views to see how environmental conditions and biological
-        patterns change together.
+        downstream across all three views.
       </p>
 
       <div class="chart-controls">
@@ -145,7 +106,6 @@
           <div class="viz-box" id="graph1"></div>
           <div class="viz-notes">
             <p><strong>Encoding:</strong> x = pH, y = density, color/shape = location</p>
-            <p><strong>Interaction:</strong> hover for sample details and click to coordinate the other views</p>
           </div>
         </div>
 
@@ -157,7 +117,6 @@
           <div class="viz-box" id="graph2"></div>
           <div class="viz-notes">
             <p><strong>Encoding:</strong> x = conductivity, y = density, color/shape = location</p>
-            <p><strong>Interaction:</strong> use this view to compare upstream and downstream patterns under the same filters</p>
           </div>
         </div>
 
@@ -169,7 +128,6 @@
           <div class="viz-box large-box" id="graph3"></div>
           <div class="viz-notes">
             <p><strong>Encoding:</strong> x = feeding group, y = average density, color = location</p>
-            <p><strong>Interaction:</strong> compare one feeding group to the rest after filtering by season and period</p>
           </div>
         </div>
       </div>
@@ -177,39 +135,32 @@
       <div id="tooltip" class="tooltip hidden"></div>
     </section>
 
-    <section class="section alt">
-      <p class="section-label">Research Context</p>
-      <h2>What we have learned so far</h2>
+    <section class="section alt compact-section">
+      <p class="section-label">Reading the Views</p>
+      <h2>What to look for</h2>
 
-      <div class="context-list">
-        <div class="context-item">
-          <h3>Season matters</h3>
-          <p>
-            Summer tends to be more stable, while Fall is more variable, so season needs
-            to stay visible in the interface.
-          </p>
+      <div class="quick-facts">
+        <div class="fact-card">
+          <h3>Graph 1</h3>
+          <p>How density changes across pH values</p>
         </div>
 
-        <div class="context-item">
-          <h3>Downstream often differs</h3>
-          <p>
-            Downstream generally shows lower pH and slightly higher flow and conductivity,
-            along with greater overall macroinvertebrate density.
-          </p>
+        <div class="fact-card">
+          <h3>Graph 2</h3>
+          <p>How density changes across conductivity values</p>
         </div>
 
-        <div class="context-item">
-          <h3>Groups respond differently</h3>
-          <p>
-            Collector filterers are often more abundant downstream, while scraper and
-            collector gatherer patterns are more mixed and dynamic.
-          </p>
+        <div class="fact-card">
+          <h3>Graph 3</h3>
+          <p>How average density differs by feeding group and location</p>
         </div>
       </div>
     </section>
   </main>
 
-
+  <footer class="footer">
+    <p>CSC 235 • Spring 2026</p>
+  </footer>
 
   <script src="index.js"></script>
 </body>
