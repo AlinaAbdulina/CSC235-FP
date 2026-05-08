@@ -15,7 +15,6 @@ const chartConfigs = {
     yKey: "density",
     xLabel: "pH",
     yLabel: "Density",
-    title: "pH and feeding groups",
     width: 460,
     height: 260
   },
@@ -24,18 +23,14 @@ const chartConfigs = {
     yKey: "density",
     xLabel: "Conductivity",
     yLabel: "Density",
-    title: "Conductivity and feeding groups",
     width: 460,
     height: 260
   },
   graph3: {
-    xKey: "flow",
-    yKey: "density",
-    xLabel: "Flow",
-    yLabel: "Density",
-    title: "Flow and feeding groups",
+    xLabel: "Feeding Group",
+    yLabel: "Average Density",
     width: 960,
-    height: 300
+    height: 320
   }
 };
 
@@ -119,7 +114,7 @@ function updateStatusMessage(filteredData) {
   d3.select("#statusMessage").text(message);
 }
 
-function showTooltip(event, d, xLabel) {
+function showScatterTooltip(event, d, xLabel) {
   const xValue =
     xLabel === "pH" ? d.pH :
     xLabel === "Conductivity" ? d.cond :
@@ -135,6 +130,21 @@ function showTooltip(event, d, xLabel) {
       Year: ${d.year}<br>
       ${xLabel}: ${d3.format(".2f")(xValue)}<br>
       Density: ${d3.format(".2f")(d.density)}
+    `)
+    .style("left", `${event.pageX + 12}px`)
+    .style("top", `${event.pageY - 20}px`);
+}
+
+function showBarTooltip(event, d) {
+  tooltip
+    .classed("hidden", false)
+    .html(`
+      <strong>${d.location}</strong><br>
+      FFG: ${d.FFG}<br>
+      Average Density: ${d3.format(".2f")(d.avgDensity)}<br>
+      Samples: ${d.count}<br>
+      Season: ${state.selectedSeason}<br>
+      Period: ${state.selectedPeriod}
     `)
     .style("left", `${event.pageX + 12}px`)
     .style("top", `${event.pageY - 20}px`);
@@ -245,7 +255,7 @@ function drawScatter(containerId, config, data) {
     .classed("point-dim", d => state.selectedFFG !== "All" && d.FFG !== state.selectedFFG)
     .classed("point-active", d => state.selectedFFG !== "All" && d.FFG === state.selectedFFG)
     .on("mouseenter", function(event, d) {
-      showTooltip(event, d, config.xLabel);
+      showScatterTooltip(event, d, config.xLabel);
     })
     .on("mousemove", moveTooltip)
     .on("mouseleave", hideTooltip)
@@ -288,6 +298,161 @@ function drawScatter(containerId, config, data) {
     .text("Downstream");
 }
 
+function drawGroupedBar(containerId, config, data) {
+  const container = d3.select(`#${containerId}`);
+  container.selectAll("*").remove();
+
+  const width = config.width;
+  const height = config.height;
+  const margin = { top: 20, right: 25, bottom: 60, left: 70 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+
+  const grouped = d3.rollups(
+    data,
+    values => ({
+      avgDensity: d3.mean(values, d => d.density),
+      count: values.length
+    }),
+    d => d.FFG,
+    d => d.location
+  );
+
+  const flattened = [];
+  grouped.forEach(([ffg, locations]) => {
+    locations.forEach(([location, values]) => {
+      flattened.push({
+        FFG: ffg,
+        location: location,
+        avgDensity: values.avgDensity,
+        count: values.count
+      });
+    });
+  });
+
+  const svg = container
+    .append("svg")
+    .attr("class", "chart-svg")
+    .attr("viewBox", `0 0 ${width} ${height}`);
+
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  if (flattened.length === 0) {
+    g.append("text")
+      .attr("x", innerWidth / 2)
+      .attr("y", innerHeight / 2)
+      .attr("text-anchor", "middle")
+      .attr("fill", "#446188")
+      .text("No data available for this filter.");
+    return;
+  }
+
+  const ffgValues = Array.from(new Set(flattened.map(d => d.FFG))).sort();
+  const locations = ["Upstream", "Downstream"].filter(loc =>
+    flattened.some(d => d.location === loc)
+  );
+
+  const x0 = d3.scaleBand()
+    .domain(ffgValues)
+    .range([0, innerWidth])
+    .padding(0.25);
+
+  const x1 = d3.scaleBand()
+    .domain(locations)
+    .range([0, x0.bandwidth()])
+    .padding(0.12);
+
+  const y = d3.scaleLinear()
+    .domain([0, d3.max(flattened, d => d.avgDensity)])
+    .nice()
+    .range([innerHeight, 0]);
+
+  const yGrid = d3.axisLeft(y).tickSize(-innerWidth).tickFormat("");
+  g.append("g")
+    .attr("class", "grid")
+    .call(yGrid);
+
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", `translate(0,${innerHeight})`)
+    .call(d3.axisBottom(x0));
+
+  g.append("g")
+    .attr("class", "axis")
+    .call(d3.axisLeft(y));
+
+  g.append("text")
+    .attr("class", "axis-label")
+    .attr("x", innerWidth / 2)
+    .attr("y", innerHeight + 45)
+    .attr("text-anchor", "middle")
+    .text(config.xLabel);
+
+  g.append("text")
+    .attr("class", "axis-label")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -innerHeight / 2)
+    .attr("y", -48)
+    .attr("text-anchor", "middle")
+    .text(config.yLabel);
+
+  g.selectAll(".bar")
+    .data(flattened)
+    .enter()
+    .append("rect")
+    .attr("class", d => d.location === "Upstream" ? "bar-upstream" : "bar-downstream")
+    .attr("x", d => x0(d.FFG) + x1(d.location))
+    .attr("y", d => y(d.avgDensity))
+    .attr("width", x1.bandwidth())
+    .attr("height", d => innerHeight - y(d.avgDensity))
+    .classed("bar-dim", d => state.selectedFFG !== "All" && d.FFG !== state.selectedFFG)
+    .classed("bar-active", d => state.selectedFFG !== "All" && d.FFG === state.selectedFFG)
+    .on("mouseenter", function(event, d) {
+      showBarTooltip(event, d);
+    })
+    .on("mousemove", moveTooltip)
+    .on("mouseleave", hideTooltip)
+    .on("click", function(event, d) {
+      if (state.selectedFFG === d.FFG) {
+        state.selectedFFG = "All";
+      } else {
+        state.selectedFFG = d.FFG;
+      }
+
+      d3.select("#ffgFilter").property("value", state.selectedFFG);
+      renderAllCharts();
+    });
+
+  const legend = svg.append("g")
+    .attr("transform", `translate(${width - 125}, 18)`);
+
+  legend.append("rect")
+    .attr("x", -5)
+    .attr("y", -5)
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("class", "bar-upstream");
+
+  legend.append("text")
+    .attr("x", 12)
+    .attr("y", 4)
+    .attr("class", "legend-text")
+    .text("Upstream");
+
+  legend.append("rect")
+    .attr("x", -5)
+    .attr("y", 15)
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("class", "bar-downstream");
+
+  legend.append("text")
+    .attr("x", 12)
+    .attr("y", 24)
+    .attr("class", "legend-text")
+    .text("Downstream");
+}
+
 function renderAllCharts() {
   const filtered = getFilteredData();
 
@@ -295,7 +460,7 @@ function renderAllCharts() {
 
   drawScatter("graph1", chartConfigs.graph1, filtered);
   drawScatter("graph2", chartConfigs.graph2, filtered);
-  drawScatter("graph3", chartConfigs.graph3, filtered);
+  drawGroupedBar("graph3", chartConfigs.graph3, filtered);
 }
 
 function resetControls() {
