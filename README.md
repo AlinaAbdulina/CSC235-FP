@@ -73,7 +73,6 @@ The dashboard includes a study area diagram to provide geographic context for th
 - D3.js
 
 ---
-
 # Running the Project Locally
 
 Because the dashboard loads a CSV file using D3.js, the project must be run through a local server.
@@ -82,44 +81,58 @@ Opening `index.html` directly in the browser may prevent the dataset from loadin
 
 ---
 
-## Option 1 — VS Code Live Server (Recommended)
+# Start a Local Server
 
-### 1. Install Visual Studio Code
-Download VS Code:
+## 1. Open the Project Folder in Terminal
 
-https://code.visualstudio.com/
+Navigate into the project directory:
 
----
-
-### 2. Install the Live Server Extension
-Inside VS Code:
-- Open the Extensions tab
-- Search for **Live Server**
-- Install the extension by Ritwick Dey
-
----
-
-### 3. Open the Project Folder
-Open the folder containing:
-- `index.html`
-- `style.css`
-- `index.js`
-- `vis_analysis.csv`
-- `map.png`
-
----
-
-### 4. Start the Server
-Right click `index.html` and select:
-
-```plaintext
-Open with Live Server
+```bash
+cd path/to/project-folder
 ```
 
-The dashboard should automatically open in your browser.
+---
+
+## 2. Start the Python Server
+
+Run:
+
+```bash
+python3 -m http.server 8000
+```
+
+If `python3` does not work, try:
+
+```bash
+python -m http.server 8000
+```
 
 ---
 
+## 3. Open the Project in Your Browser
+
+Go to:
+
+```plaintext
+http://localhost:8000
+```
+
+The dashboard should now load correctly with the dataset and interactive visualizations.
+
+---
+
+# Project Structure
+
+```plaintext
+project-folder/
+│
+├── index.html
+├── style.css
+├── index.js
+├── vis_analysis.csv
+├── map.png
+└── README.md
+```
 # File Structure
 
 ```plaintext
