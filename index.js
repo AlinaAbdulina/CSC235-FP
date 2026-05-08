@@ -3,7 +3,8 @@ console.log("Page loaded.");
 const state = {
   rawData: [],
   selectedFFG: "All",
-  selectedSeason: "All"
+  selectedSeason: "All",
+  selectedPeriod: "All"
 };
 
 const tooltip = d3.select("#tooltip");
@@ -39,6 +40,8 @@ const chartConfigs = {
 };
 
 function normalizeRow(d) {
+  const year = +d.year;
+
   return {
     sampleID: d.sampleID,
     taxon_group: d.taxon_group,
@@ -47,7 +50,7 @@ function normalizeRow(d) {
     number: +d.number,
     density: +d.density,
     date: d.date,
-    year: +d.year,
+    year: year,
     season: d.season,
     location: d.location,
     microhabitat: d.microhabitat,
@@ -63,7 +66,8 @@ function normalizeRow(d) {
     flow: +d.flow,
     turb: +d.turb,
     cond: +d.cond,
-    winter_sediment: +d["winter.sediment"]
+    winter_sediment: +d["winter.sediment"],
+    period: year === 2019 ? "Before" : year >= 2020 ? "After" : "Other"
   };
 }
 
@@ -98,25 +102,38 @@ function getFilteredData() {
   return state.rawData.filter(d => {
     const ffgMatch = state.selectedFFG === "All" || d.FFG === state.selectedFFG;
     const seasonMatch = state.selectedSeason === "All" || d.season === state.selectedSeason;
+    const periodMatch = state.selectedPeriod === "All" || d.period === state.selectedPeriod;
+
     const numericOk =
       Number.isFinite(d.pH) &&
       Number.isFinite(d.cond) &&
       Number.isFinite(d.flow) &&
       Number.isFinite(d.density);
 
-    return ffgMatch && seasonMatch && numericOk;
+    return ffgMatch && seasonMatch && periodMatch && numericOk;
   });
 }
 
+function updateStatusMessage(filteredData) {
+  const message = `${filteredData.length} records shown • Season: ${state.selectedSeason} • Period: ${state.selectedPeriod} • Feeding group: ${state.selectedFFG}`;
+  d3.select("#statusMessage").text(message);
+}
+
 function showTooltip(event, d, xLabel) {
+  const xValue =
+    xLabel === "pH" ? d.pH :
+    xLabel === "Conductivity" ? d.cond :
+    d.flow;
+
   tooltip
     .classed("hidden", false)
     .html(`
       <strong>${d.location}</strong><br>
       FFG: ${d.FFG}<br>
       Season: ${d.season}<br>
+      Period: ${d.period}<br>
       Year: ${d.year}<br>
-      ${xLabel}: ${d3.format(".2f")(d[xLabel === "pH" ? "pH" : xLabel === "Conductivity" ? "cond" : "flow"])}<br>
+      ${xLabel}: ${d3.format(".2f")(xValue)}<br>
       Density: ${d3.format(".2f")(d.density)}
     `)
     .style("left", `${event.pageX + 12}px`)
@@ -217,10 +234,9 @@ function drawScatter(containerId, config, data) {
     .attr("text-anchor", "middle")
     .text(config.yLabel);
 
-  const points = g.selectAll(".point")
-    .data(data, d => `${d.sampleID}-${d.FFG}-${config.xKey}`);
-
-  points.enter()
+  g.selectAll(".point")
+    .data(data, d => `${d.sampleID}-${d.FFG}-${config.xKey}`)
+    .enter()
     .append("circle")
     .attr("class", d => d.location === "Upstream" ? "point-upstream" : "point-downstream")
     .attr("cx", d => x(d[config.xKey]))
@@ -239,6 +255,7 @@ function drawScatter(containerId, config, data) {
       } else {
         state.selectedFFG = d.FFG;
       }
+
       d3.select("#ffgFilter").property("value", state.selectedFFG);
       renderAllCharts();
     });
@@ -274,9 +291,23 @@ function drawScatter(containerId, config, data) {
 function renderAllCharts() {
   const filtered = getFilteredData();
 
+  updateStatusMessage(filtered);
+
   drawScatter("graph1", chartConfigs.graph1, filtered);
   drawScatter("graph2", chartConfigs.graph2, filtered);
   drawScatter("graph3", chartConfigs.graph3, filtered);
+}
+
+function resetControls() {
+  state.selectedFFG = "All";
+  state.selectedSeason = "All";
+  state.selectedPeriod = "All";
+
+  d3.select("#ffgFilter").property("value", "All");
+  d3.select("#seasonFilter").property("value", "All");
+  d3.select("#periodFilter").property("value", "All");
+
+  renderAllCharts();
 }
 
 d3.csv("vis_analysis.csv", normalizeRow).then(data => {
@@ -298,10 +329,20 @@ d3.csv("vis_analysis.csv", normalizeRow).then(data => {
     renderAllCharts();
   });
 
+  d3.select("#periodFilter").on("change", function() {
+    state.selectedPeriod = this.value;
+    renderAllCharts();
+  });
+
+  d3.select("#resetBtn").on("click", function() {
+    resetControls();
+  });
+
   renderAllCharts();
 }).catch(error => {
   console.error("Error loading CSV:", error);
 
+  d3.select("#statusMessage").text("Could not load vis_analysis.csv");
   d3.select("#graph1").html("<p>Could not load vis_analysis.csv</p>");
   d3.select("#graph2").html("<p>Could not load vis_analysis.csv</p>");
   d3.select("#graph3").html("<p>Could not load vis_analysis.csv</p>");
