@@ -99,23 +99,25 @@
 
     <section id="dashboard" class="section">
       <p class="section-label">Interactive Dashboard</p>
-      <h2>Visualization plan</h2>
+      <h2>Compare environmental conditions and feeding groups</h2>
+
       <p class="dashboard-note">
-        The dashboard includes three linked views built from the real <code>vis_analysis.csv</code>.
-        Click a point or use the dropdowns to highlight one feeding group across all views.
+        Start by choosing a season, period, or feeding group. Then compare upstream and
+        downstream across all three views to see how environmental conditions and biological
+        patterns change together.
       </p>
 
       <div class="chart-controls">
         <div class="control-group">
           <label for="seasonFilter"><strong>Season:</strong></label>
-          <select id="seasonFilter">
+          <select id="seasonFilter" aria-label="Filter by season">
             <option value="All">All</option>
           </select>
         </div>
 
         <div class="control-group">
           <label for="periodFilter"><strong>Period:</strong></label>
-          <select id="periodFilter">
+          <select id="periodFilter" aria-label="Filter by period">
             <option value="All">All</option>
             <option value="Before">Before</option>
             <option value="After">After</option>
@@ -124,53 +126,50 @@
 
         <div class="control-group">
           <label for="ffgFilter"><strong>Feeding group:</strong></label>
-          <select id="ffgFilter">
+          <select id="ffgFilter" aria-label="Filter by feeding group">
             <option value="All">All</option>
           </select>
         </div>
 
-        <button id="resetBtn" type="button">Reset</button>
+        <button id="resetBtn" type="button" aria-label="Reset all dashboard filters">Reset</button>
       </div>
 
-      <div id="statusMessage" class="status-message">Loading data...</div>
+      <div id="statusMessage" class="status-message" aria-live="polite">Loading data...</div>
 
       <div class="dashboard-grid">
         <div class="viz-card">
           <div class="viz-header">
-            <h3>Graph 1</h3>
-            <p>pH and feeding groups</p>
+            <h3>pH vs Density by Feeding Group</h3>
+            <p>Compare pH and macroinvertebrate density across feeding groups</p>
           </div>
           <div class="viz-box" id="graph1"></div>
           <div class="viz-notes">
-            <p><strong>Focus:</strong> pH relationships by feeding group</p>
-            <p><strong>Encoding:</strong> x = pH, y = density, color = location</p>
-            <p><strong>Coordinated view:</strong> selecting a feeding group updates Graph 2 and Graph 3</p>
+            <p><strong>Encoding:</strong> x = pH, y = density, color/shape = location</p>
+            <p><strong>Interaction:</strong> hover for sample details and click to coordinate the other views</p>
           </div>
         </div>
 
         <div class="viz-card">
           <div class="viz-header">
-            <h3>Graph 2</h3>
-            <p>Conductivity and feeding groups</p>
+            <h3>Conductivity vs Density by Feeding Group</h3>
+            <p>Compare conductivity and macroinvertebrate density across feeding groups</p>
           </div>
           <div class="viz-box" id="graph2"></div>
           <div class="viz-notes">
-            <p><strong>Focus:</strong> conductivity and density patterns</p>
-            <p><strong>Encoding:</strong> x = conductivity, y = density, color = location</p>
-            <p><strong>Interaction:</strong> highlight selected groups and compare upstream vs downstream</p>
+            <p><strong>Encoding:</strong> x = conductivity, y = density, color/shape = location</p>
+            <p><strong>Interaction:</strong> use this view to compare upstream and downstream patterns under the same filters</p>
           </div>
         </div>
 
         <div class="viz-card full-width">
           <div class="viz-header">
-            <h3>Graph 3</h3>
-            <p>Flow and feeding groups</p>
+            <h3>Average Density by Feeding Group and Location</h3>
+            <p>Grouped comparison of average density for each feeding group</p>
           </div>
           <div class="viz-box large-box" id="graph3"></div>
           <div class="viz-notes">
-            <p><strong>Focus:</strong> flow and functional feeding groups</p>
-            <p><strong>Encoding:</strong> x = flow, y = density, color = location</p>
-            <p><strong>Interaction:</strong> filter to one feeding group and compare it to the rest</p>
+            <p><strong>Encoding:</strong> x = feeding group, y = average density, color = location</p>
+            <p><strong>Interaction:</strong> compare one feeding group to the rest after filtering by season and period</p>
           </div>
         </div>
       </div>
@@ -210,9 +209,7 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p>CSC 235 • Spring 2026</p>
-  </footer>
+
 
   <script src="index.js"></script>
 </body>

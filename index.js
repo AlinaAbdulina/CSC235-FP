@@ -160,6 +160,14 @@ function hideTooltip() {
   tooltip.classed("hidden", true);
 }
 
+function symbolForLocation(location) {
+  return location === "Upstream" ? d3.symbolCircle : d3.symbolSquare;
+}
+
+function classForLocation(location) {
+  return location === "Upstream" ? "point-upstream" : "point-downstream";
+}
+
 function drawScatter(containerId, config, data) {
   const container = d3.select(`#${containerId}`);
   container.selectAll("*").remove();
@@ -244,14 +252,13 @@ function drawScatter(containerId, config, data) {
     .attr("text-anchor", "middle")
     .text(config.yLabel);
 
-  g.selectAll(".point")
+  const pointGroup = g.selectAll(".point-symbol")
     .data(data, d => `${d.sampleID}-${d.FFG}-${config.xKey}`)
     .enter()
-    .append("circle")
-    .attr("class", d => d.location === "Upstream" ? "point-upstream" : "point-downstream")
-    .attr("cx", d => x(d[config.xKey]))
-    .attr("cy", d => y(d[config.yKey]))
-    .attr("r", 5)
+    .append("path")
+    .attr("class", d => classForLocation(d.location))
+    .attr("transform", d => `translate(${x(d[config.xKey])},${y(d[config.yKey])})`)
+    .attr("d", d3.symbol().size(90).type(d => symbolForLocation(d.location)))
     .classed("point-dim", d => state.selectedFFG !== "All" && d.FFG !== state.selectedFFG)
     .classed("point-active", d => state.selectedFFG !== "All" && d.FFG === state.selectedFFG)
     .on("mouseenter", function(event, d) {
@@ -273,10 +280,9 @@ function drawScatter(containerId, config, data) {
   const legend = svg.append("g")
     .attr("transform", `translate(${width - 125}, 18)`);
 
-  legend.append("circle")
-    .attr("cx", 0)
-    .attr("cy", 0)
-    .attr("r", 5)
+  legend.append("path")
+    .attr("transform", "translate(0,0)")
+    .attr("d", d3.symbol().size(90).type(d3.symbolCircle))
     .attr("class", "point-upstream");
 
   legend.append("text")
@@ -285,10 +291,9 @@ function drawScatter(containerId, config, data) {
     .attr("class", "legend-text")
     .text("Upstream");
 
-  legend.append("circle")
-    .attr("cx", 0)
-    .attr("cy", 20)
-    .attr("r", 5)
+  legend.append("path")
+    .attr("transform", "translate(0,20)")
+    .attr("d", d3.symbol().size(90).type(d3.symbolSquare))
     .attr("class", "point-downstream");
 
   legend.append("text")
