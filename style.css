@@ -71,6 +71,11 @@ h1 {
   padding-bottom: 50px;
 }
 
+.compact-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .section-label {
   font-size: 14px;
   text-transform: uppercase;
@@ -151,6 +156,96 @@ code {
 }
 
 .downstream {
+  background-color: #d95f02;
+}
+
+.quick-facts {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.fact-card {
+  width: 30%;
+  float: left;
+  margin-right: 3.333%;
+  background-color: white;
+  border: 1px solid #d7e0ea;
+  padding: 18px;
+  box-sizing: border-box;
+  min-height: 150px;
+}
+
+.fact-card:last-child {
+  margin-right: 0;
+}
+
+.fact-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.fact-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+.study-area-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.study-area-card {
+  border: 1px solid #d7e0ea;
+  background-color: #fcfdff;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.study-area-image-wrap {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.study-area-image {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #c9d3e0;
+}
+
+.study-area-caption {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.study-area-caption p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.site-key {
+  margin-bottom: 12px;
+}
+
+.site-chip {
+  display: inline-block;
+  padding: 4px 10px;
+  margin-right: 8px;
+  font-size: 14px;
+  border-radius: 999px;
+  color: white;
+}
+
+.upstream-chip {
+  background-color: #1b9e77;
+}
+
+.downstream-chip {
   background-color: #d95f02;
 }
 
@@ -444,7 +539,8 @@ code {
   .right-column,
   .info-card,
   .viz-card,
-  .context-item {
+  .context-item,
+  .fact-card {
     width: 100%;
     float: none;
     margin-right: 0;
@@ -458,41 +554,13 @@ code {
   .control-group {
     margin-bottom: 12px;
   }
-  .compact-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
 
-.quick-facts {
-  overflow: hidden;
-  margin-top: 20px;
-}
+  .study-area-card {
+    padding: 14px;
+  }
 
-.fact-card {
-  width: 30%;
-  float: left;
-  margin-right: 3.333%;
-  background-color: white;
-  border: 1px solid #d7e0ea;
-  padding: 18px;
-  box-sizing: border-box;
-  min-height: 150px;
-}
-
-.fact-card:last-child {
-  margin-right: 0;
-}
-
-.fact-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 22px;
-  font-weight: normal;
-}
-
-.fact-card p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 6px 0;
-}
+  .study-area-image,
+  .study-area-caption {
+    max-width: 100%;
+  }
 }
